@@ -6,7 +6,6 @@ public class OrderDrink {
     protected boolean stick;
     protected double price;// iteration 2
     protected double insertedMoney;// Iteration 2
-    protected TEMPERATURE temperature; // Iteration 3
 
     public OrderDrink() {
         super();
@@ -14,11 +13,10 @@ public class OrderDrink {
         this.sugar = 0;
     }
 
-    public OrderDrink(TEMPERATURE temperature,int sugar) {
+    public OrderDrink(int sugar) {
         super();
         this.stick = sugar > 0;
         this.sugar = sugar;
-        this.temperature = temperature;
     }
 
     public String getDrinkLabel() {
@@ -63,14 +61,6 @@ public class OrderDrink {
      */
     public boolean insertMoney(double money) {
         return (insertedMoney = insertedMoney + money) >= this.price;
-    }
-
-    public TEMPERATURE getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(TEMPERATURE temperature) {
-        this.temperature = temperature;
     }
 
     public enum TEMPERATURE { // Iteration 3

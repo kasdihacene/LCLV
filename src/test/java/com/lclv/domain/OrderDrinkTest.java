@@ -14,9 +14,9 @@ public class OrderDrinkTest {
 
     @Before
     public void setUp() throws Exception {
-        coffee = new OrderCoffee(0);
-        tea = new OrderTea(2);
-        chocolate = new OrderChocolate(1);
+        coffee = new OrderCoffee(OrderDrink.TEMPERATURE.EXTRA_HOT,0);
+        tea = new OrderTea(OrderDrink.TEMPERATURE.EXTRA_HOT,2);
+        chocolate = new OrderChocolate(OrderDrink.TEMPERATURE.CLASSIC,1);
         juice = new OrderJuice();
     }
 
@@ -44,6 +44,7 @@ public class OrderDrinkTest {
     public void chocolateTest() {
         Assert.assertTrue(chocolate.getStick());
         Assert.assertTrue(chocolate.getPrice()==0.5);
+        Assert.assertTrue(((OrderChocolate)chocolate).getTemperature()== OrderDrink.TEMPERATURE.CLASSIC);
     }
 
     @Test

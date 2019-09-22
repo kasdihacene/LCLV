@@ -4,6 +4,8 @@ public class OrderDrink {
     protected String drinkLabel;
     protected int sugar;
     protected boolean stick;
+    protected double price;// iteration 2
+    protected double insertedMoney;// Iteration 2
 
     public OrderDrink() {
         super();
@@ -45,4 +47,19 @@ public class OrderDrink {
         return messageContent;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    /**
+     * @param money : the amount inserted
+     * @return true if the amount is greater or equal to the price of the drink
+     */
+    public boolean insertMoney(double money) {
+        return (insertedMoney = insertedMoney + money) >= this.price;
+    }
 }

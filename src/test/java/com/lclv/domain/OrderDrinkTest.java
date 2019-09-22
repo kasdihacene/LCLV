@@ -27,15 +27,20 @@ public class OrderDrinkTest {
     @Test
     public void coffeeTest() {
         Assert.assertTrue(!coffee.getStick());
+        Assert.assertTrue(coffee.getPrice()==0.6);
+        Assert.assertFalse(coffee.insertMoney(0.4));
+        Assert.assertTrue(coffee.insertMoney(0.2));
     }
 
     @Test
     public void teaTest() {
         Assert.assertTrue(tea.getStick());
+        Assert.assertTrue(tea.getPrice()==0.4);
     }
 
     @Test
     public void chocolateTest() {
         Assert.assertTrue(chocolate.getStick());
+        Assert.assertTrue(chocolate.getPrice()==0.5);
     }
 }

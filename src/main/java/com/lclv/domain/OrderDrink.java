@@ -1,22 +1,27 @@
 package com.lclv.domain;
 
+import com.lclv.util.DrinkUtils;
+
 public class OrderDrink {
     protected String drinkLabel;
     protected int sugar;
     protected boolean stick;
     protected double price;// iteration 2
     protected double insertedMoney;// Iteration 2
+    protected String servedDate;// Iteration 4
 
     public OrderDrink() {
         super();
         this.stick = false;
         this.sugar = 0;
+        this.servedDate = DrinkUtils.getCurrentDate();
     }
 
     public OrderDrink(int sugar) {
         super();
         this.stick = sugar > 0;
         this.sugar = sugar;
+        this.servedDate = DrinkUtils.getCurrentDate();
     }
 
     public String getDrinkLabel() {
@@ -62,6 +67,10 @@ public class OrderDrink {
     public boolean insertMoney(double money) {
         return (insertedMoney = insertedMoney + money) >= this.price;
     }
+
+    public String getServedDate() {
+        return servedDate;
+    }//Iteration 4
 
     public enum TEMPERATURE { // Iteration 3
         CLASSIC,// Natural temperature

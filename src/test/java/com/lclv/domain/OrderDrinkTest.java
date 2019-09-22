@@ -10,12 +10,14 @@ public class OrderDrinkTest {
     OrderDrink coffee;
     OrderDrink tea;
     OrderDrink chocolate;
+    OrderDrink juice;
 
     @Before
     public void setUp() throws Exception {
         coffee = new OrderCoffee(0);
         tea = new OrderTea(2);
         chocolate = new OrderChocolate(1);
+        juice = new OrderJuice();
     }
 
     @Test
@@ -42,5 +44,12 @@ public class OrderDrinkTest {
     public void chocolateTest() {
         Assert.assertTrue(chocolate.getStick());
         Assert.assertTrue(chocolate.getPrice()==0.5);
+    }
+
+    @Test
+    public void juiceTest() {
+        Assert.assertFalse(juice.getStick());
+        Assert.assertTrue(juice.getPrice()==0.6);
+        Assert.assertTrue(juice.insertMoney(0.7));
     }
 }
